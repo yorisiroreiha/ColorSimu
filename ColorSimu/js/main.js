@@ -3,7 +3,7 @@
 window.onload = ()=> {
 	const result = document.getElementById("result");
 
-	const params = document.querySelectorAll("[type="range"]");
+	const params = document.querySelectorAll("[type='range']");
 	const code = document.getElementById("code");
 	const check = document.getElementById("check");
 	
@@ -16,7 +16,7 @@ window.onload = ()=> {
 			];
 			const cCode = toHex(rgb);
 			setColor(rgb,cCode);
-			params[i].nextElementSiblig.textContent = params[i].value;
+			params[i].nextElementSibling.textContent = params[i].value;
 			code.value = cCode.substring(1);
 		});
 	}
@@ -59,9 +59,9 @@ window.onload = ()=> {
 				code.charAt(2) +
 				code.charAt(2);
 		}
-		let r = parseInt(code.subString(0,2),16);
-		let g = parseInt(code.subString(2,4),16);
-		let b = parseInt(code.subString(4,6),16);
+		let r = parseInt(code.substring(0,2),16);
+		let g = parseInt(code.substring(2,4),16);
+		let b = parseInt(code.substring(4,6),16);
 
 		return [r,g,b] ;
 	};
@@ -74,6 +74,6 @@ window.onload = ()=> {
 		}
 
 		result.style.backgroundColor = cCode;
-		result.textContent = cCodetoLowerCase();
+		result.textContent = cCode.toLowerCase();
 	};
 };
